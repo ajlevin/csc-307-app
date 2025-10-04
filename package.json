@@ -5,11 +5,14 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev" : "npm --workspace=react-frontend run dev"
+    "dev": "npm --workspace=react-frontend run dev"
   },
   "workspaces": [
-    "packages/*"  
+    "packages/*"
   ],
   "author": "epy",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5"
+  }
 }
