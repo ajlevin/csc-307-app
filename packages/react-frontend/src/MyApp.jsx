@@ -24,10 +24,13 @@ function MyApp() {
     );
 
     function removeOneCharacter(index) {
+        var removedID = characters[index].id;
         const updated = characters.filter((character, i) => {
-        return i !== index;
+            return i !== index;
         });
+
         setCharacters(updated);
+        deleteUser(removedID);
     }
 
     function updateList(person) {
@@ -46,6 +49,14 @@ function MyApp() {
                 "Content-Type": "application/json",
             },
             body: JSON.stringify(person),
+        });
+
+        return promise;
+    }
+
+    function deleteUser(id) {
+        const promise = fetch("Http://localhost:8000/users/" + id, {
+            method: "DELETE",
         });
 
         return promise;
