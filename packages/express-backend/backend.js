@@ -28,8 +28,6 @@ const addUser = (user) => {
 
 const deleteUser = (id) => {
   let uInd = users["users_list"].findIndex((user) => user["id"] === id);
-  console.log(uInd)
-  console.log(users["users_list"])
 
   if (uInd !== -1) {
       users["users_list"].splice([uInd], 1);
